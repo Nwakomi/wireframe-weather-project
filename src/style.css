@@ -1,0 +1,95 @@
+h2 {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  border: 1px solid;
+  padding: 10px 20px 10px 20px;
+  margin: 10px 300px 30px 35px;
+  width: 75%;
+  font-size: 25px;
+  border: 1px solid;
+  border-radius: 30px;
+}
+
+h4 {
+  position: relative;
+  top: -650px;
+  left: 430px;
+}
+
+.col {
+  position: relative;
+  top: -640px;
+  left: 300px;
+  margin-right: 50px;
+}
+
+.col-wind,
+.col-sun,
+.col-uv,
+.col-hum {
+  box-sizing: content-box;
+  border: 1px solid;
+  border-radius: 30%;
+  width: 200px;
+  position: relative;
+  top: -600px;
+  left: 400px;
+  margin: 30px;
+  margin-right: 60px;
+  padding: 10px 0px 50px 0px;
+  font-size: 20px;
+}
+
+.left-box {
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid;
+  width: 25%;
+  border-radius: 10px;
+  padding-bottom: 50px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.searchbar {
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+.location {
+  position: relative;
+  left: -10px;
+  font-size: 30px;
+  color: rgb(113, 109, 109);
+}
+
+.sun1 {
+  font-size: 170px;
+  position: relative;
+  margin-left: 50px;
+  margin-top: 60px;
+}
+
+.dateTime {
+  position: relative;
+  margin-top: 60px;
+  margin-left: 40px;
+  font-size: 30px;
+}
+
+.weatherDescription {
+  font-size: 17px;
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
+.Mon,
+.Tue,
+.Wed,
+.Thu,
+.Fri,
+.Sat,
+.Sun {
+  font-size: 40px;
+  margin-top: 20px;
+}
