@@ -21,22 +21,27 @@
   <body>
     <div class="left-box">
       <div>
-        <form id="search-bar">
-          <div class="searchBar">
-            <input
-              type="text"
-              placeholder="Enter city name"
-              autofocus="on"
-              autocomplete="off"
-              id="search-text-input"
-            />
+        <form id="search-form">
+          <div class="row">
+            <div class="col-9">
+              <input
+                type="text"
+                placeholder="Enter city name..."
+                autofocus="on"
+                autocomplete="off"
+                class="form-control"
+                id="city-input"
+              />
+            </div>
+
+            <div class="col-3">
+              <br />
+
+              <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
           </div>
         </form>
       </div>
-      <br />
-
-      <button id="searchButton">Search</button>
-      <button id="currentLocation">Current</button>
 
       <br />
       <h2 id="city"></h2>

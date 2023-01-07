@@ -52,8 +52,13 @@ h4 {
   margin-top: 20px;
 }
 
-.searchBar {
+.col-9 {
   margin-top: 30px;
+  margin-left: 15px;
+}
+
+.col-3 {
+  margin-top: -10px;
   margin-left: 15px;
 }
 
