@@ -23,37 +23,25 @@ let month = months[now.getMonth()];
 let dateTime = document.querySelector(".dateTime");
 dateTime.innerHTML = `${day} ${month} ${date}, ${hours}:${minutes}`;
 
-function search(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-text-input");
-  let h2 = document.querySelector("#h2");
-  h2.innerHTML = `${searchInput.value}`;
-}
-
-let form = document.querySelector("#search-bar");
-form.addEventListener("submit", search);
-
-let city = "Münster";
-let apiKey = "2daf65f0cdaa917f11026e8a128ce271";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
-let h2 = city;
-
-function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
+function displayTemperature(response) {
+  console.log(response);
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = response.data.main.temp;
+  let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector("#weatherDescription");
+  let wind = document.querySelector("#wind");
+  let sunrise = document.querySelector("#sunrise");
+  let sunset = document.querySelector("#sunset");
+  let humidity = document.querySelector("#humidity");
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  wind.innerHTML = Math.round(response.data.wind.speed);
+  sunrise.innerHTML = response.data.sys.sunrise;
+  sunset.innerHTML = response.data.sys.sunset;
+  humidity.innerHTML = response.data.main.humidity;
 }
 
-axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
+let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=metric`;
 
-function showPosition() {
-  let h2 = document.querySelector("h2");
-  h2.innerHTML = `${navigator.geolocation.getCurrentPosition.value}`;
-}
-
-function getCurrentPosition() {
-  navigator.geolocation.getCurrentPosition(showPosition);
-}
-
-let button = document.querySelector("#currentLocation");
-button.addEventListener("click", getCurrentPosition);
+axios.get(apiUrl).then(displayTemperature);

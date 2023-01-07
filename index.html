@@ -16,7 +16,7 @@
       src="https://kit.fontawesome.com/2442d8df83.js"
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="left-box">
@@ -40,15 +40,17 @@
       <button id="currentLocation">Current</button>
 
       <br />
-      <h2 id="h2"></h2>
+      <h2 id="city"></h2>
 
       <br />
       <div>
-        <span class="temperature" id="temperature">24</span>
+        <span class="temperature" id="temperature"></span>
         <span class="units">
           <a href="#" id="celcius">°C</a> |
           <a href="#" id="fahrenheit">°F</a>
         </span>
+        <br />
+        <span class="description" id="weatherDescription"></span>
       </div>
 
       <i class="fa-regular fa-sun sun1"></i>
@@ -57,14 +59,6 @@
 
       <div class="dateTime">
         <p>Monday, 12.00 pm</p>
-      </div>
-      <hr />
-
-      <div class="weatherDescription">
-        <p>
-          <i class="fa-solid fa-cloud-sun"></i> mostly cloudy <br />
-          <i class="fa-solid fa-cloud-rain"></i> rain - 30%
-        </p>
       </div>
     </div>
 
@@ -116,7 +110,7 @@
         <div class="col-hum">
           <strong> Humidity</strong> <br />
           <br />
-          35%
+          <span id="humidity"></span>%
         </div>
         <div class="col-uv">
           <strong>UV Index</strong> <br />
@@ -128,12 +122,12 @@
         <div class="col-wind">
           <strong>Wind</strong> <br />
           <br />
-          34 mp/h
+          <span id="wind"></span> mp/h
         </div>
         <div class="col-sun">
-          <strong>Sunset</strong> / <strong>Sunrise</strong> <br />
+          <strong>Sunrise</strong> / <strong>Sunset</strong> <br />
           <br />
-          20.43 pm / 4.28 am
+          <span id="sunrise"></span> am / <span id="sunset"></span> pm
         </div>
       </div>
     </div>
