@@ -1,27 +1,25 @@
-let now = new Date();
-let date = now.getDate();
-let hours = now.getHours();
-let minutes = now.getMinutes();
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let day = days[now.getDay()];
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sept",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-let month = months[now.getMonth()];
-
-let dateTime = document.querySelector(".dateTime");
-dateTime.innerHTML = `${day} ${month} ${date}, ${hours}:${minutes}`;
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0&{hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0&{minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
+}
 
 function displayTemperature(response) {
   console.log(response);
@@ -32,6 +30,7 @@ function displayTemperature(response) {
   let sunrise = document.querySelector("#sunrise");
   let sunset = document.querySelector("#sunset");
   let humidity = document.querySelector("#humidity");
+  let date = document.querySelector("#date");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -39,6 +38,7 @@ function displayTemperature(response) {
   sunrise.innerHTML = response.data.sys.sunrise;
   sunset.innerHTML = response.data.sys.sunset;
   humidity.innerHTML = response.data.main.humidity;
+  date.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";

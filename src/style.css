@@ -73,15 +73,19 @@ h4 {
 .dateTime {
   position: relative;
   margin-top: 60px;
-  margin-left: 40px;
-  font-size: 30px;
+  margin-left: 0px;
+  font-size: 20px;
 }
 
 .description {
-  font-size: 17px;
+  font-size: 20px;
   margin-left: 0px;
   margin-top: 40px;
   text-transform: capitalize;
+}
+
+.date {
+  font-size: 20px;
 }
 
 .Mon,
