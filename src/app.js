@@ -21,6 +21,30 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = ` <div class="row row-cols-auto">`;
+  let days = ["Mon", "Tue", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="container text-center" id="forecast">
+     
+        <div class="col-2">
+          ${day} 
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class = "weather-forecast-temperatures">
+        <span class="weather-forecast-temperatures-max">18°</span>
+         <span class="weather-forecast-temperatures-min">10°</span>
+         </div>
+      </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -59,7 +83,6 @@ function handleSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
   search(cityInput.value);
-  console.log(cityInput.value);
 }
 
 function displayFahrenheitTemperature(event) {
@@ -92,4 +115,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celciusLink = document.querySelector("#celcius");
 celciusLink.addEventListener("click", displayCelciusTemperature);
 
-search("New York");
+search("Kuwait City");
+displayForecast();

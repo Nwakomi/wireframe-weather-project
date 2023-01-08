@@ -16,11 +16,11 @@ h4 {
   left: 400px;
 }
 
-.col {
+.col-2 {
   position: relative;
-  top: -640px;
+  top: -600px;
   bottom: 40px;
-  left: 300px;
+  left: 200px;
   margin-right: 50px;
 }
 
@@ -85,17 +85,6 @@ h4 {
 
 .date {
   font-size: 60px;
-}
-
-.Mon,
-.Tue,
-.Wed,
-.Thu,
-.Fri,
-.Sat,
-.Sun {
-  font-size: 40px;
-  margin-top: 20px;
 }
 
 .weatherTemperature .active {
