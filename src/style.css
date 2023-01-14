@@ -20,12 +20,16 @@ h4 {
   position: relative;
   top: -600px;
   bottom: 40px;
-  left: 200px;
+  left: 250px;
   margin-right: 50px;
 }
 
-.forecast-temperatures {
-  top: 0px;
+.weather-forecast-temperatures {
+  position: relative;
+  top: -600px;
+  bottom: 40px;
+  left: 250px;
+  margin-right: 50px;
 }
 
 .col-wind,

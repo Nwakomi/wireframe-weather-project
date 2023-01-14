@@ -113,13 +113,6 @@ function handleSubmit(event) {
   search(cityInput.value);
 }
 
-function displayCelciusTemperature(event) {
-  event.preventDefault();
-
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celciusTemperature);
-}
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
