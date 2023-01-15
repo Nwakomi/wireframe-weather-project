@@ -22,9 +22,9 @@ function formatDate(timestamp) {
 }
 
 function formatDay(timespamp) {
-  let date = new Date(timespamp + 1000);
+  let date = new Date(timespamp * 1000);
   let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return days[day];
 }
@@ -36,7 +36,7 @@ function displayForecast(response) {
 
   let forecastHTML = `<div class="row row-cols-auto">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 5) {
       forecastHTML =
         forecastHTML +
         `<div class="container text-center" id="forecast">
@@ -87,9 +87,9 @@ function displayTemperature(response) {
   temperatureElement.innerHTML = Math.round(celciusTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
-  wind.innerHTML = Math.round(response.data.wind.speed);
-  sunrise.innerHTML = response.data.sys.sunrise;
-  sunset.innerHTML = response.data.sys.sunset;
+  wind.innerHTML = Math.round(response.data.wind.speed * 3.6);
+  sunrise.innerHTML = formatDate(response.data.sys.sunrise * 1000);
+  sunset.innerHTML = formatDate(response.data.sys.sunset * 1000);
   humidity.innerHTML = response.data.main.humidity;
   date.innerHTML = formatDate(response.data.dt * 1000);
   icon.setAttribute(
