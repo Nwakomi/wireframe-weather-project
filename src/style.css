@@ -5,29 +5,29 @@ h2 {
   padding: 10px 20px 10px 20px;
   margin: 10px 300px 30px 35px;
   width: 75%;
-  font-size: 25px;
+  font-size: 20px;
   border: 1px solid;
   border-radius: 10px;
 }
 
 h4 {
   position: relative;
-  top: -640px;
-  left: 400px;
+  top: -550px;
+  left: 350px;
 }
 
 .col-2 {
   position: relative;
-  top: -600px;
-  bottom: 40px;
-  left: 250px;
+  top: -540px;
+  bottom: 50px;
+  left: 190px;
 }
 
 .weather-forecast-temperatures {
   position: relative;
-  top: -600px;
+  top: -540px;
   bottom: 40px;
-  left: 235px;
+  left: 170px;
 }
 
 .col-wind,
@@ -85,6 +85,8 @@ h4 {
 .weatherIcon {
   position: relative;
   margin: 20px 50px 20px 50px;
+  font-size: 20px;
+  padding: 0px;
 }
 
 .description {
